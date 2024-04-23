@@ -87,11 +87,12 @@
                     throw new Error('A network Error has occurred');
                 }
 
-                // const contentType = response.headers.get('Content-Type');
-                // console.log(contentType);
+                const contentType = response.headers.get('Content-Type');
+                console.log(contentType);
                 
                 data = await response.json();
-                if(data === 'Invalid  login codes, Please try again.'){
+                console.log(data)
+                if(data === '"error: Invalid  login codes, Please try again."'){
                 displayAlert('danger', 'Invalid login Credentials...');
                 }else {
                 displayAlert('success', `Login successful: Your ID is ${data.uniqueid}`);
