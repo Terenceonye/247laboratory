@@ -1,0 +1,143 @@
+:root{
+    --green: #33C946;
+    --green2: #33C946;
+    --teagreen:#C8F6CE;
+    --grey: #A5A5A5;
+    --dark-green: rgb(8, 87, 8);
+ }
+ .payment-section{
+    margin: 8rem 0 10rem 0;
+ }
+ .payment-section .payment-form{
+    width: 90%;
+    border: 2px solid var(--grey);    
+    border-radius: .5rem;
+    padding: 1rem;
+ }
+ .payment-section .payment-form h4{
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+ }
+ .payment-section form input{
+    height: 3.5rem;
+    background: transparent;border: 2px solid var(--grey);
+    border-radius: .3rem;
+    padding: .5rem;
+    font-size: 1.2rem;
+ }
+ .payment-section form .text-input input{
+    width: 48%;
+ }
+ .payment-section form .input-date input{
+    width: 32%;
+ }
+ .payment-section form .checkbox{
+    height: 1.2rem;
+    width: 1.2rem;
+    vertical-align: top;
+    accent-color: var(--dark-green) !important;
+ }
+ .payment-section form label{
+    vertical-align: middle;
+ }
+ .payment-section form .confrim-btn{
+    margin: 1.5rem 0;
+    padding: .8rem 2.3rem;
+    font-size: 1.1rem;
+ }
+ .payment-section .booking{
+    border: 2px solid var(--grey);
+    border-radius: .5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.payment-section .booking .h4{
+    padding: 1.2rem;
+    border-bottom: 2px solid grey;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.payment-section .booking .content{
+    padding: 0 1.5rem;
+    margin: 3.5rem 0;
+}
+.payment-section .booking .details p{
+    display: inline-block;
+
+}
+.payment-section .booking .total{
+    border-top: 2px solid var(--grey);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: .5rem 1.5rem 0;
+}
+
+
+
+
+
+.payment-section .profile-card{
+    /* padding: 1rem; */
+    border: 2px solid var(--grey);
+    border-radius: .5rem;
+}
+.payment-section .profile-card .img img{
+    border-radius: .3rem;
+    margin-right: .5rem;
+}
+.payment-section .profile-card .title{
+    margin-top: 2rem;
+}
+.payment-section .profile-card .title p{
+    font-weight: 500;
+}
+.payment-section .profile-card .date,
+.payment-section .profile-card .fee,
+.payment-section .profile-card.total{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.payment-section .profile-card .h4{
+    padding: 1rem;
+    border-bottom: 2px solid grey;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.payment-section .profile-card .intro{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+@media screen and (max-width: 991px){
+    .g-5{
+        --bs-gutter-x: 1rem !important;
+    }
+    .payment-section .payment-form{
+        width: 100%;
+    }
+    .payment-section .booking .content{
+        margin: 3.7rem 0 2rem;
+    }
+    .payment-section .booking{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 768px){ 
+   .payment-section .paysm{
+      flex-direction: column-reverse;
+   }
+
+}
+@media screen and (max-width: 640px){
+    .payment-section form .checkbox{
+        height: 1rem;
+        width: 1rem;
+        vertical-align: middle;
+     }
+    .payment-section form .confrim-btn{
+        padding: .5rem 1.5rem;
+        font-size: 1rem;
+     }
+} 

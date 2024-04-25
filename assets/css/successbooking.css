@@ -1,0 +1,48 @@
+
+.book-header .hero{
+    padding: 0;
+}
+:root{
+    --green: #33C946;
+    --green2: #33C946;
+    --teagreen:#C8F6CE;
+    --grey: #A5A5A5;
+ }
+ .success-book{
+    margin: 8rem 0 10rem 0;
+ }
+.success-book .success-box{
+    width: 50vw;
+    margin: auto;
+    border: 2px solid var(--grey);
+    border-radius: .8rem;
+    padding: 3rem;
+    text-align: center;
+}
+.success-book .success-box h4{
+    font-weight: 700;
+}
+.success-book .success-box p{
+    font-weight: 600;
+}
+.success-book .box p{
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.success-book .success-box button{
+    margin: 1rem;
+    padding: .7rem 3rem;
+}
+
+@media screen and (max-width: 991px){
+    .success-book .success-box{
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .success-book .success-box{
+        width: 90vw;
+        padding: 0;
+    }
+}

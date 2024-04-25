@@ -26,7 +26,7 @@
                                     <p>${value.details.slice(0,100)}&hellip;</p>
                                 </div>
                                 <div class="blog-end d-flex justify-content-between align-items-center">
-                                    <div class="readbtn"><a href="${baseReadMorePath}${value.id}/${value.title.replace(/ /g, '-')}.">Read More</a>&nbsp&nbsp&nbsp<i class="fa-solid fa-arrow-right"></i></div>
+                                    <div class="readbtn"><a href="${baseReadMorePath}${value.id}/${value.title.replace(/%/g, '-')}.">Read More</a>&nbsp&nbsp&nbsp<i class="fa-solid fa-arrow-right"></i></div>
                                     <div class="blog-icon">
                                         <div><i class="fa-solid fa-eye"></i><span>${value.viewcount}</span></div>
                                         <div><i class="fa-solid fa-share-nodes"></i><span>7</span></div>

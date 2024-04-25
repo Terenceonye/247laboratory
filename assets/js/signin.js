@@ -95,8 +95,10 @@
                 if(data === '"error: Invalid  login codes, Please try again."'){
                 displayAlert('danger', 'Invalid login Credentials...');
                 }else {
+                
                 displayAlert('success', `Login successful: Your ID is ${data.uniqueid}`);
                 localStorage.setItem('key', data.uniqueid)
+
 
                 token = localStorage.getItem('key')
                 console.log("User Id as key is", token);
