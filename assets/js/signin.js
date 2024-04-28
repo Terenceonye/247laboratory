@@ -101,6 +101,7 @@
                 displayAlert('success', `Login successful: Your ID is ${data.id}. Redirecting...`);
                 document.getElementById('signin-form').reset();
                 localStorage.setItem('key', data.id)
+                localStorage.setItem('location', data.statename)
                 setTimeout(()=> {
                     window.location.href = 'index.html'
                 }, 2000)

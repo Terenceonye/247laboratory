@@ -19,10 +19,37 @@
         .content{
             background-image:url('assets/img/Mask\ Group\ 17.png') 
         }
+        #loading-screen {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Dark transparent background */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1040;
+            /* On top of other content */
+            
+            justify-content: center;
+            align-items: center;
+            display: none;
+            /* Start hidden */
+        }
+
+        .no-scroll {
+            overflow: hidden;
+            /* Disable scrolling */
+        }
         
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+
+    <div id="loading-screen">
+        <i class="fas fa-spinner fa-spin fa-3x text-white"></i>
+    </div>
+
+
     <header class="">
         <div class="navigation">
             <div class="top-nav">
@@ -76,34 +103,9 @@
                         </div>
                         <div class="booking">
                             <div><h4 class="h4">Booking Summary</h4></div>
-                            <table class="table">
-                                <tr>
-                                    <td>Location :</td>
-                                    <td>EverightLab - Abuja kubwa Akwakuma hone is good to go</td>
-                                </tr>
-                                <tr>
-                                    <td>Test Type :</td>
-                                    <td>Covid 19</td>
-                                </tr>
-                                <tr>
-                                    <td>Date : </td>
-                                    <td>17 Apr 2024</td>
-                                </tr>
-                                <tr>
-                                    <td>Time :</td>
-                                    <td>12:pm</td>
-                                </tr>
-                                <tr>
-                                    <td>Appointment fee</td>
-                                    <td>5000</td>
-                                </tr>
-                                                          
-                            </table>
-                          
-                            <div class="total d-flex justify-content-between fw-bold">
-                                <p>Total</p>
-                                <p>5000</p>
-                            </div >
+                            <div id="details">
+                               <!-- booking details-->
+                            </div>
                             <div class="d-grid  mx-2 mb-2"><button class="btn-brand payment-btn">Make payment</button></div>
                         </div>
                     </div>
@@ -181,7 +183,83 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
             
             
-
             <script src="./assets/js/checkAuth.js"></script>
+
+
+            <script>
+                const ref = localStorage.getItem('ref')
+
+                document.addEventListener('DOMContentLoaded', async ()=> {
+                    const details = document.getElementById('details');
+                    try {
+                        showLoadingScreen()
+
+                        const response = await fetch(`https://247laboratory.net/branches/getsessioninfo/247LAB1704240224`)
+                        if(!response.ok) throw new Error('Network Error')
+
+                        const data = await response.json();
+                        details.innerHTML = `<table class="table">
+                                <tr>
+                                    <td>Location :</td>
+                                    <td>${data.bookedfrom}</td>
+                                </tr>
+                                <tr>
+                                    <td>Test Type :</td>
+                                    <td>${data.service.servicetitle}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date : </td>
+                                    <td>${data.datecreated.split('T')[0]}</td>
+                                </tr>
+                                <tr>
+                                    <td>Time :</td>
+                                    <td>${data.datecreated.split('T')[1].split('+')[0]}</td>
+                                </tr>
+                                <tr>
+                                    <td>Appointment fee</td>
+                                    <td>N${data.cost}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Logistics:</td>
+                                    <td>N${data.logistics}</td>
+                                </tr>
+                                                          
+                            </table>
+                          
+                            <div class="total d-flex justify-content-between fw-bold">
+                                <p>Total</p>
+                                <p>N${data.cost + data.logistics}</p>
+                            </div >`;
+
+                        hideLoadingScreen();
+                        console.log(data)
+                    } catch (error) {
+                        console.log('there was and error', error.message)
+                    }
+
+
+
+
+
+
+                // Function to show the loading screen and disable scrolling
+            function showLoadingScreen() {
+                document.getElementById('loading-screen').style.display = 'flex';
+                document.body.classList.add('no-scroll');
+            }
+
+            // Function to hide the loading screen and enable scrolling
+            function hideLoadingScreen() {
+                document.getElementById('loading-screen').style.display = 'none';
+                document.body.classList.remove('no-scroll');
+            }
+        })
+
+
+
+
+
+            </script>
 </body>
 </html>

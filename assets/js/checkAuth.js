@@ -21,13 +21,13 @@
 
                 if (bookAppointmentBig) {
                     bookAppointmentBig.addEventListener('click', () => {
-                        checkAuth('./payment.html');
+                        checkAuth('./bookappointment.html');
                     });
                 }
 
                 if (bookAppointmentSmall) {
                     bookAppointmentSmall.addEventListener('click', () => {
-                        checkAuth('./payment.html');
+                        checkAuth('./bookappointment.html');
                     });
                 }
 
