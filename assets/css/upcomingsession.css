@@ -1,0 +1,54 @@
+.book-header .hero{
+    padding: 0;
+}
+:root{
+    --green: #33C946;
+    --green2: #33C946;
+    --teagreen:#C8F6CE;
+    --grey: #A5A5A5;
+ }
+.session-section{
+    margin: 8rem 0 10rem 0;
+}
+.session-section .session{
+    width: 70vw;
+    margin: auto;
+    background: var(--teagreen);
+    border-radius: .5rem;
+    padding-bottom: 1rem;
+}
+ .session-section .session-box{
+    border-bottom: 2px solid var(--grey);
+    margin-bottom: 1rem;
+    
+ }
+ .session-section .session-box .title{
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--grey);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+ } 
+ .session-section .content .details{
+    display: inline-block;
+    margin: 1rem 1rem 0 1.5rem;
+    font-weight: 500;
+ }
+ .session-section .content .session-info{
+    width: 80%;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+ }
+ @media screen and (max-width: 640px){
+    .session-section .session{
+        width: 80vw;
+    }
+    .session-section .content .details{
+        display: block;
+     }    
+}
+@media screen and (max-width: 475px){
+    .session-section .session{
+        width: 90vw;
+    }
+}

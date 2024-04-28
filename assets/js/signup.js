@@ -6,6 +6,7 @@
 
         document.getElementById("submit-button").addEventListener("click", async function (event) {
             event.preventDefault(); // Prevent default form submission
+            
 
             // Retrieve form data
             var formData = {
@@ -135,6 +136,7 @@
 
             // Submit form data to the server
             try {
+                document.getElementById('spinner').classList.add('fa-spinner', 'fa-spin')
                 const response = await fetch('http://247laboratory.net/branches/createpatientaccount', {
                     method: 'POST',
                     headers: {
@@ -157,6 +159,10 @@
                 } else if (!isNaN(parseInt(data))) {
                     // Handle user ID (integer) response
                     displayAlert('success', 'Registration successful.');
+                    document.getElementById('signup-form').reset();
+                    setTimeout(()=> {
+                        window.location.href = './index.html'
+                    }, 2000)
                 } else {
                     // Handle unexpected response types
                     throw new Error('Unexpected response format. Please try again later.');
@@ -177,4 +183,6 @@
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>`;
                 alertContainer.innerHTML = alert;
+
+                document.getElementById('spinner').classList.remove('fa-spinner', 'fa-spin')
             }

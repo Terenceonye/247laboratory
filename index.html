@@ -17,63 +17,74 @@
             background-image:url('assets/img/Mask\ Group\ 17.png') 
         }
         
-        #loading-screen {
-            background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
-            position: fixed; /* Covers the entire screen */
+          #loading-screen {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Dark transparent background */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 1000; /* On top of other content */
+            z-index: 1040;
+            /* On top of other content */
+            
+            justify-content: center;
+            align-items: center;
+            display: none;
+            /* Start hidden */
+        }
+
+        .no-scroll {
+            overflow: hidden;
+            /* Disable scrolling */
         }
     </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<body>
 
-    <div id="loading-screen" class="d-flex justify-content-center align-items-center vh-100" style="display: flex;">
-        <div class="overlay">
-            <i class="fas fa-spinner fa-spin fa-3x text-white"></i>
-        </div>
+    <div id="loading-screen">
+        <i class="fas fa-spinner fa-spin fa-3x text-white"></i>
     </div>
 
     <header class="">
-        <div class="navigation">
+        <div class="navigation" id="header">
             <div class="top-nav">
-                <div class="call-us text-center">             
+                <div class="call-us text-center">
                     <p><i class="fa-solid fa-phone"></i>Call us 08052255000</p>
                 </div>
             </div>
-            <div class="clear-float"></div>
-            <nav class="navbar navbar-expand-lg navba fixed-top">
+            <!-- <div class="clear-float"></div> -->
+            <nav class="navbar navbar-expand-lg navba">
                 <div class="container">
-                    <div class="navbar-brand me-auto logo">
-                        <img src="assets/img/247LAB LOGO DESIGN (1).png" alt="">
+                    <div class="navbar-brand me-auto logo" onclick="window.location.href = './'">
+                        <img src="assets/img/247LAB LOGO DESIGN (1).png" alt="247lab">
                     </div>
-                  <!-- <a class="navbar-brand me-auto" href="#">Offcanvas navbar</a> -->
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <!-- <a class="navbar-brand me-auto" href="#">Offcanvas navbar</a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                <li class="nav-item"><a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a></li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#about">About</a</li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#service">Service</a></li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#blog">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#">Contact Us</a></li>
+                            </ul>
+                            <div class="nav-btn">
+                                <a href="signin.html" class="ms-lg-2" id="signin" style="color: #000; font-weight: 600;">Sign In</a>
+                                <a href="signup.html" class="btn btn-brand ms-lg-2">Sign Up</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item"><a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#about">About</a</li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#service">Service</a></li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#">Contact Us</a></li>
-                      </ul>
-                      <div class="nav-btn">
-                        <a href="signin.html" class="ms-lg-2" style="color: #000; font-weight: 600;">Sign In</a>
-                        <a href="signup.html" class="btn btn-brand ms-lg-2">Sign Up</a>
-                        </div>  
-                    </div>
-                  </div>
                 </div>
-              </nav>
+            </nav>
         </div>
 
         <div class="hero">
@@ -83,7 +94,7 @@
                         <h4><span style="width: 1rem;height: 1px;background: green;"></span>Welcome to 247laboratory.net</h4>
                         <h1>Book Your <span style="color: green;">Laboratory Test</span> With Ease</h1>
                         <p>Adipiscing Elit, Sed Do Slusmod Tempor.Lorem Ipsum Dolor Sit Amet.</p>
-                        <div class="book-btn"><a href="#" class="btn-brand">Book Appointment</a></div>                            
+                        <div class="book-btn book-btn-big"><a href="#" class="btn-brand">Book Appointment</a></div>                            
                     </div>                        
                 </div>
                 <div class="hero-bg-img bg-cover hero-sm" style="height: 33rem; width: 100%;background: linear-gradient(rgba(9, 32, 50, 0.4), rgba(9, 32, 50, 0.1)),url('assets/img/hero-img.jpg');">
@@ -91,7 +102,7 @@
                         <h4><span style="width: 1rem;height: 1px;background: green;"></span>Welcome to 247laboratory.net</h4>
                         <h1>Book Your <span style="color: green;">Laboratory Test</span> With Ease</h1>
                         <p>Adipiscing Elit, Sed Do Slusmod Tempor.Lorem Ipsum Dolor Sit Amet.</p>
-                        <div class="book-btn"><a href="#" class="btn-brand">Book Appointment</a></div>                            
+                        <div class="book-btn book-btn-small"><a href="#" class="btn-brand">Book Appointment</a></div>                            
                     </div>
                </div>                
             </div>
@@ -337,31 +348,7 @@
                     </div>
                 </div>
                 <div class="row" id="blog-posts">
-                    <!-- <div class="col-md-4">
-                        <article class="blog-box">
-                            <div><img src="assets/img/IMMUNE.png" alt="" width="100%"></div>
-                            <div class="blog-content">
-                                <div class="blog-date d-flex">
-                                    <div><img src="assets/img/profile.png" alt="" width="20px"><span>Admin</span></div>
-                                    <div><img src="assets/img/calendar.png" alt="" width="20px"><span>25 March 2024</span></div>                                    
-                                </div>
-                                <div class="blog-text">
-                                    <h4>Lorem Ipsum is simply dummy text of the printing and typesetting </h4>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an</p>
-                                </div>
-                                <div class="blog-end d-flex justify-content-between align-items-center">
-                                    <div class="readbtn"><a href="#">Read More</a>&nbsp&nbsp&nbsp<i class="fa-solid fa-arrow-right"></i></div>
-                                    <div class="blog-icon">
-                                        <div><img src="assets/img/8725647_comment_message_icon.png" alt="" width="20px"><span>5</span></div>
-                                        <div><img src="assets/img/heart.png" alt="" width="20px"><span>17</span></div>
-                                        <div><img src="assets/img/Group 229.png" alt="" width="18px"><span>7</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>                        
-                    </div>                    
-                     -->
-
+                  
                     
                 </div>
             </div>
@@ -420,11 +407,14 @@
         
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        
+    
         <!-- Bootstrap JS -->
         <script src="assets/js/bootstrap.min.js"></script>
         <!-- Owl Carousel JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+   
+
         <script>
             $('.testimonial-slider').owlCarousel({
             loop: true,
@@ -453,24 +443,8 @@
     
 
         <script src="./assets/js/blog.js"></script>
-
-        <script>
-            function hideLoadingScreen() {
-                document.getElementById('loading-screen').style.display = 'none';
-                document.body.classList.remove('no-scroll');
-            }
-
-            // Event listener for when the page's HTML content is fully loaded
-            document.addEventListener('DOMContentLoaded', function () {
-                // Remove loading screen and enable scrolling when the page is fully loaded
-                hideLoadingScreen();
-            });
-
-            // Event listener for when all resources (images, scripts, etc.) have finished loading
-            window.addEventListener('load', function () {
-                // Remove loading screen and enable scrolling when all resources are loaded
-                hideLoadingScreen();
-            });
-        </script>
+        
+        <script src="./assets/js/checkAuth.js"></script>
+           
 </body>
 </html>

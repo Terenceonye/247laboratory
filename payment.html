@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script src="./assets/js/key.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>247lab</title>
@@ -16,48 +19,49 @@
         .content{
             background-image:url('assets/img/Mask\ Group\ 17.png') 
         }
-        .our-service .box{}
+        
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <header class="">
         <div class="navigation">
             <div class="top-nav">
-                <div class="call-us text-center">             
+                <div class="call-us text-center">
                     <p><i class="fa-solid fa-phone"></i>Call us 08052255000</p>
                 </div>
             </div>
-            <div class="clear-float"></div>
-            <nav class="navbar navbar-expand-lg navba fixed-top">
+            <!-- <div class="clear-float"></div> -->
+            <nav class="navbar navbar-expand-lg navba">
                 <div class="container">
-                    <div class="navbar-brand me-auto logo">
-                        <img src="assets/img/247LAB LOGO DESIGN (1).png" alt="">
+                    <div class="navbar-brand me-auto logo" onclick="window.location.href = './'">
+                        <img src="assets/img/247LAB LOGO DESIGN (1).png" alt="247lab">
                     </div>
-                  <!-- <a class="navbar-brand me-auto" href="#">Offcanvas navbar</a> -->
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <!-- <a class="navbar-brand me-auto" href="#">Offcanvas navbar</a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                <li class="nav-item"><a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a></li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#about">About</a</li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#service">Service</a></li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#blog">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link ms-lg-2" href="#">Contact Us</a></li>
+                            </ul>
+                            <div class="nav-btn">
+                                <a href="signin.html" class="ms-lg-2" id="signin" style="color: #000; font-weight: 600;">Sign In</a>
+                                <a href="signup.html" class="btn btn-brand ms-lg-2">Sign Up</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item"><a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#about">About</a</li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#service">Service</a></li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#">Contact Us</a></li>
-                      </ul>
-                      <div class="nav-btn">
-                        <a href="signin.html" class="ms-lg-2" style="color: #000; font-weight: 600;">Sign In</a>
-                        <a href="signup.html" class="btn btn-brand ms-lg-2">Sign Up</a>
-                        </div>  
-                    </div>
-                  </div>
                 </div>
-              </nav>
+            </nav>
         </div>
     </header>
     <main>
@@ -65,52 +69,42 @@
         <section class="payment-section">
             <div class="container">
                 <div class="row g-5 paysm">
-                    <div class="col-md-7">
-                        <div class="payment-form">
-                            <h4>Payment Method</h4>
-                            <form action="">
-                                <div class="mb-3 mt-4 text-input">
-                                    <input type="text" class="card-name" id="name"  name="name" placeholder="Name on Card">
-                                    <input type="number" class="card-no " id="card-no"  name="card-no" placeholder="Card Number">                                
-                                </div>  
-                                <div class="my-4 py-2 input-date">
-                                    <input type="date" class="months" id="months"  name="months" placeholder="Expiry Months">
-                                    <input type="date" class="years" id="years"  name="years" placeholder="Expiry Year">  
-                                    <input type="number" max="999" class="cvv" id="cvv"  name="years" placeholder="CVV">
-                                </div>  
-                                <div class="m4">
-                                    <input class="checkbox" type="checkbox" value="" id="terms">
-                                    <label class="form-check-label" for="terms">I have read and accept <span class="intro">Terms and Conditions</span></label>
-                                </div>
-                                <div><button class="btn-brand confrim-btn">Confirm payment</button></div>                            
-                            </form>
+               
+                    <div class="col-md-12">
+                        <div>
+                            
                         </div>
-                    </div>
-                    <div class="col-md-5">
                         <div class="booking">
                             <div><h4 class="h4">Booking Summary</h4></div>
-                            <div class="content">
-                                <div class="details">
-                                    <p>Location : </p>
-                                    <p>EverightLab - Abuja kubwa</p>
-                                </div>
-                                <div class="details">
-                                    <p>Test Type : </p>
-                                    <p>Covid 19</p>
-                                </div>
-                                <div class="details">
-                                    <p>Date : </p><p>17 Apr 2024</p>                                  
-                                    <p>Time : </p><p>12:pm</p>
-                                </div>
-                                <div class="appointment d-flex justify-content-between">
-                                    <p>Appointment fee</p>
-                                    <p>5000</p>
-                                </div>                                
-                            </div>
-                            <div class="total d-flex justify-content-between">
+                            <table class="table">
+                                <tr>
+                                    <td>Location :</td>
+                                    <td>EverightLab - Abuja kubwa Akwakuma hone is good to go</td>
+                                </tr>
+                                <tr>
+                                    <td>Test Type :</td>
+                                    <td>Covid 19</td>
+                                </tr>
+                                <tr>
+                                    <td>Date : </td>
+                                    <td>17 Apr 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Time :</td>
+                                    <td>12:pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Appointment fee</td>
+                                    <td>5000</td>
+                                </tr>
+                                                          
+                            </table>
+                          
+                            <div class="total d-flex justify-content-between fw-bold">
                                 <p>Total</p>
                                 <p>5000</p>
-                            </div>
+                            </div >
+                            <div class="d-grid  mx-2 mb-2"><button class="btn-brand payment-btn">Make payment</button></div>
                         </div>
                     </div>
                 </div>
@@ -174,6 +168,10 @@
         </section>
     </footer>
         
+
+
+
+            
             <!-- jQuery -->
             <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
             
@@ -182,5 +180,8 @@
             <!-- Owl Carousel JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
             
+            
+
+            <script src="./assets/js/checkAuth.js"></script>
 </body>
 </html>

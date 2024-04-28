@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./assets/js/key.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bookappointment.css">
+    <title>Document</title>
+    <style>
+        header .container-fluid{
+            padding: 0;
+        }
+        .hero-bgimg{
+            height: 20rem;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-image: url('assets/img/Group 94.png');            
+        }
+    </style>
+</head>
+<body>
+    <header class="">
+        <div class="navigation">
+            <div class="top-nav">
+                <div class="call-us text-center">             
+                    <p><i class="fa-solid fa-phone"></i>Call us 08052255000</p>
+                </div>
+            </div>
+            <div class="clear-float"></div>
+            <nav class="navbar navbar-expand-lg navba fixed-top">
+                <div class="container">
+                    <div class="navbar-brand me-auto logo">
+                        <img src="assets/img/247LAB LOGO DESIGN (1).png" alt="">
+                    </div>
+                  <!-- <a class="navbar-brand me-auto" href="#">Offcanvas navbar</a> -->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#about">About</a</li>
+                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#service">Service</a></li>
+                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link ms-lg-2" href="#">Contact Us</a></li>
+                      </ul>
+                      <div class="nav-btn">
+                        <a href="signin.html" class="ms-lg-2" style="color: #000; font-weight: 600;">Sign In</a>
+                        <a href="signup.html" class="btn btn-brand ms-lg-2">Sign Up</a>
+                        </div>  
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="content">
+                            <h4 class="fs-2 fw-bolder">Laboratory Test Made <span class="text-change">Simple</span></h4>
+                            <h6 class="fw-bolder">Find and book laboratory test. <a href="https://247doc.net/" target="_blank" class="link">Need a doctor?</a> </h6></div>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="booking-form">                            
+                            <div class="title py-5"><h4>Book Appointment</h4></div>
+
+                            <form id="appointment-form">
+                    
+                                <div class="mb-3">
+                                    <label for="serviceid" class="form-label">Appointment type: </label>
+                                    <select id="serviceid" class="form-select">
+                                        <option value="">(Select One)</option>
+                                        <option value="0">Blood Test</option>
+                                        <option value="1">Pregnancy Test</option>
+                                    </select>
+                                </div>
+
+
+                                 <!-- <div class="mb-3 mt-3">
+                                    <label for="dates" class="form-label">Date:</label>
+                                    <input type="date" class="form-control" id="dtaes" name="dates">
+                                </div> -->
+
+                                <div class="mb-3">
+                                    <label for="bookedfrom" class="form-label">Location </label>
+                                    <select id="bookedfrom" class="form-select">
+                                        <option value="">(Select One)</option>
+                                        <option value="0">Imo State</option>
+                                        <option value="1">FCT Abuja</option>
+                                    </select>
+                                </div>
+                                
+                                
+                                <div class="mb-3">
+                                    <label for="homeservice" class="form-label">Service Type </label>
+                                    <select id="homeservice" class="form-select">
+                                        <option value="">(Select One)</option>
+                                        <option value="0">Home Service</option>
+                                        <option value="1">Not Home Service</option>
+                                    </select>
+                                </div>
+                                
+                        
+                               
+
+                                <!-- <div class="select-menu">
+                                    <div class="select-btn d-flex justify-content-between align-items-center">
+                                        <span class="sBtn-text"></span>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>                            
+                                    <ul class="options">
+                                        <li class="option"><span class="option-text">Everight Lab - Abuja Wuse</span></li>
+                                        <li class="option"><span class="option-text">Everight Lab - Owerri Wetheral</span></li>
+                                        <li class="option"><span class="option-text">Everight Lab - Lagos</span></li>
+                                        <li class="option"><span class="option-text">Everight Lab - Garki</span></li>
+                                        <li class="option"><span class="option-text">Everight Lab - Kabuwa</span></li>
+                                    </ul>
+                                </div> -->
+                                <!-- <div class="mb-3 mt-3">
+                                    <label for="texts" class="form-label">Additional info:</label>
+                                    <textarea class="form-control" id="texts" rows="7"></textarea>
+                                </div> -->
+                                <div class="mb-3 mt-3"><button  id="submit"  class="btn-brand book-btn"><i class="fas" id="spinner"></i> Book now</button> </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </section>        
+    </main>
+
+    <footer>
+        <section class="footer-section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="about-us">
+                            <h4>About Us</h4>
+                            <a href="#">About Us</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Contact Us</a>
+                            <a href="#">Terms and Condition</a>
+                            <a href="#">Privacy and Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="services">
+                            <h4>Services</h4>
+                            <a href="#">Online pharmacy</a>
+                            <a href="#">Netpro.africa</a>
+                            <a href="#">kingswill.com</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="related-links">
+                            <h4>Related Links</h4>
+                            <a href="#">Everight Diagonistic and Laboratory</a>
+                            <a href="#">Pharmacy Council of Nigeria</a>
+                            <a href="#">Medical and Dental Council of Nigeria</a>
+                            <a href="#">Nursing and Midwifery Council of Nigeria</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+                        <h4> Social Link</h4>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="ms-2"><i class="fa-brands fa-instagram"></i></i></a>
+                            <a href="#" class="ms-2"><i class="fa-brands fa-square-youtube" style="font-size: 1.2rem;"></i></a>
+                            <button class="btn-brand">Contact Us</button>
+                        </div>                  
+                    </div>
+                    <div class="horizontal-line mt-5">
+                        <hr>
+                        <p class="text-center mt-2">© 2024 NetPro International Limited All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+    <script src="./assets/js/bookappointment.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        //Dropdown menu
+        // const optionMenu = document.querySelector(".select-menu");
+        // const selectBtn = optionMenu.querySelector(".select-btn");
+        // const options = optionMenu.querySelectorAll(".option");
+        // const sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+        // selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));       
+
+        // options.forEach(option =>{
+        //     option.addEventListener("click", ()=>{
+        //         let selectedOption = option.querySelector(".option-text").innerText;
+        //         sBtn_text.innerText = selectedOption;
+
+        //         optionMenu.classList.remove("active");
+        //     });
+        // });
+
+
+        //Changing Test Effect
+        // const texts = document.querySelector(".text-change");
+
+        // const textChange = () => {
+        //     setTimeout(() => {
+        //         texts.textContent = "Simple";
+        //     }, 0);
+        //     setTimeout(() => {
+        //         texts.textContent = "Seamless";
+        //     }, 4000);
+        //     setTimeout(() => {
+        //         texts.textContent = "Effortless";
+        //     }, 6000);
+        //     setTimeout(() => {
+        //         texts.textContent = "Easy";
+        //     }, 8000);
+        // }
+
+        // textChange();
+        // setInterval(textChange, 12000)
+
+
+       const texts = document.querySelector(".text-change");
+        const textValues = ['Simple', 'Seamless', 'Effortless', 'Easy'];
+
+        let currentIndex = 0;
+
+        const interval = setInterval(() => {
+            texts.textContent = textValues[currentIndex];
+            currentIndex++;
+            if (currentIndex >= textValues.length) {
+                currentIndex = 0;
+            }
+        }, 4000);
+
+    </script>
+
+
+    
+</body>
+</html>

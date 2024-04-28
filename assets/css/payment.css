@@ -6,47 +6,12 @@
     --dark-green: rgb(8, 87, 8);
  }
  .payment-section{
-    margin: 8rem 0 10rem 0;
+    margin: 4.5rem 0 10rem 0;
  }
- .payment-section .payment-form{
-    width: 90%;
-    border: 2px solid var(--grey);    
-    border-radius: .5rem;
-    padding: 1rem;
- }
- .payment-section .payment-form h4{
-    font-weight: 600;
-    font-size: 1.3rem;
-    padding: 1rem 0;
- }
- .payment-section form input{
-    height: 3.5rem;
-    background: transparent;border: 2px solid var(--grey);
-    border-radius: .3rem;
-    padding: .5rem;
-    font-size: 1.2rem;
- }
- .payment-section form .text-input input{
-    width: 48%;
- }
- .payment-section form .input-date input{
-    width: 32%;
- }
- .payment-section form .checkbox{
-    height: 1.2rem;
-    width: 1.2rem;
-    vertical-align: top;
-    accent-color: var(--dark-green) !important;
- }
- .payment-section form label{
-    vertical-align: middle;
- }
- .payment-section form .confrim-btn{
-    margin: 1.5rem 0;
-    padding: .8rem 2.3rem;
-    font-size: 1.1rem;
- }
+
  .payment-section .booking{
+    width: fit-content;
+    margin: auto;
     border: 2px solid var(--grey);
     border-radius: .5rem;
     font-size: 1.1rem;
@@ -59,6 +24,11 @@
     font-size: 1.3rem;
     font-weight: 600;
 }
+
+tr td:nth-child(1){
+    width: 50%;
+}
+
 .payment-section .booking .content{
     padding: 0 1.5rem;
     margin: 3.5rem 0;
@@ -109,6 +79,9 @@
 .payment-section .profile-card .intro{
     font-size: 1.1rem;
     font-weight: 700;
+}
+.payment-btn{
+    border-radius: .3rem;
 }
 @media screen and (max-width: 991px){
     .g-5{

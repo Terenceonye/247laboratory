@@ -1,5 +1,6 @@
         document.getElementById("submit-button").addEventListener("click", async function (event) {
             event.preventDefault(); // Prevent default form submission
+            
 
             // Retrieve email from the form
             const username = document.getElementById("email").value.trim();
@@ -51,6 +52,7 @@
         async function submitEmail(username) {
             // Submit the email address to the server
             try {
+                document.getElementById('spinner').classList.add('fa-spinner', 'fa-spin')
                 const response = await fetch('http://247laboratory.net/branches/forgotpassword', {
                     method: 'POST',
                     headers: {
@@ -84,4 +86,6 @@
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                       </div>`;
             alertContainer.innerHTML = alert;
+
+            document.getElementById('spinner').classList.remove('fa-spinner', 'fa-spin')
         }

@@ -73,16 +73,16 @@
     box-shadow: 1px 7px 17px 1px rgba(0, 0, 0, 0.2);     
     z-index: 100;
  }
- .clear-float{    
-    clear: both;
- }
+
  .navba{
     clear: both;
     font-weight: 600;
     font-size: 1.1rem;
     padding-top: 0;
     background: #fff;
-    box-shadow: 1px 2px 10px 1px rgba(13, 13, 13, 0.3);
+    /* box-shadow: 1px 2px 10px 1px rgba(13, 13, 13, 0.3); */
+    position: sticky !important;
+    top: -10px !important;
  }
  .navbar .active{
     border-bottom: 3px solid var(--green) !important;

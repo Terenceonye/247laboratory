@@ -1,0 +1,103 @@
+:root{
+    --green: #33C946;
+    --green2: #33C946;
+    --teagreen:#C8F6CE;
+    --grey: #A5A5A5;
+ }
+ .booking-section{
+    margin: 6rem 0 10rem 0;
+ }
+ .booking-section .content .link,
+ .booking-section .content .text-change{
+    color: var(--green);
+ }
+ .booking-section .booking-form{
+    background: var(--teagreen);
+ }
+ .booking-section .booking-form .title{
+    height: 15px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+ }
+ .booking-section .booking-form form{
+    padding: 1rem 2rem;
+ }
+ .booking-section .booking-form .select-menu{
+    width: 100%;
+}
+.booking-section .booking-form .select-menu .select-btn{
+    height: 55px;
+    background: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.booking-section .booking-form .select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.booking-section .booking-form .select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.booking-section .booking-form .select-menu .options{
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+.booking-section .booking-form .select-menu .test-title{
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    border-bottom: 2px solid var(--grey);    
+}
+.booking-section .booking-form .select-menu.active .options{
+    display: block;
+}
+.booking-section .booking-form ul li{
+    height: 55px;
+    padding: 0 1rem;
+    background: #fff;
+    font-size: 18px;
+    color: #333;
+    list-style: none;
+    cursor: pointer;
+}
+.booking-section .booking-form ul li:hover{
+    background: #F2F2F2;
+}
+.booking-section .booking-form input{
+    height: 55px;
+    font-size: 18px;
+}
+
+.booking-section .booking-form .book-btn{
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.booking-section .booking-form .book-btn:hover{
+    opacity: 0.6;
+    transition: 1s;
+}
+
+.booking-section .booking-form label{
+    font-size: 18px;
+    font-weight: 500;
+}
+@media screen and (max-width: 768px){
+    .booking-section .content{
+        margin-bottom: 2rem;
+        text-align: center;
+     }
+
+}

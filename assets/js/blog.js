@@ -4,6 +4,7 @@
       const getblog = async () => {
 
         try {
+            showLoadingScreen()
             const res = await fetch('https://blog.247pharmacy.net/users/getblogs')
             if(!res.ok) throw new Error ('A network Error occurred')
 
@@ -39,6 +40,9 @@
             }}).join('')
             console.log(display)
             document.getElementById('blog-posts').innerHTML = display
+
+
+            hideLoadingScreen();
             
             
         } catch (error) {
@@ -49,4 +53,16 @@
       }
 
       getblog();
+
+      // Function to show the loading screen and disable scrolling
+        function showLoadingScreen() {
+            document.getElementById('loading-screen').style.display = 'flex';
+            document.body.classList.add('no-scroll');
+        }
+
+        // Function to hide the loading screen and enable scrolling
+        function hideLoadingScreen() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
    

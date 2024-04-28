@@ -4,6 +4,7 @@
 
         document.getElementById("submit-button").addEventListener("click", async function (event) {
             event.preventDefault(); // Prevent default form submission
+            
 
             // Retrieve form data
             var formData = {
@@ -75,6 +76,7 @@
         async function submitFormData(formData) {
             // Submit form data to the server
             try {
+                document.getElementById('spinner').classList.add('fa-spinner', 'fa-spin')
                 const response = await fetch('http://247laboratory.net/branches/signin', {
                     method: 'POST',
                     headers: {
@@ -96,8 +98,12 @@
                 displayAlert('danger', 'Invalid login Credentials...');
                 }else {
                 
-                displayAlert('success', `Login successful: Your ID is ${data.uniqueid}`);
-                localStorage.setItem('key', data.uniqueid)
+                displayAlert('success', `Login successful: Your ID is ${data.id}. Redirecting...`);
+                document.getElementById('signin-form').reset();
+                localStorage.setItem('key', data.id)
+                setTimeout(()=> {
+                    window.location.href = 'index.html'
+                }, 2000)
 
 
                 token = localStorage.getItem('key')
@@ -118,6 +124,7 @@
                               ${message}
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>`;
+                          document.getElementById('spinner').classList.remove('fa-spinner', 'fa-spin')
             alertContainer.innerHTML = alert;
         }
     
