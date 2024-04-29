@@ -10,7 +10,7 @@
 
             const data = await res.json()
 
-            console.log(data)
+            // console.log(data)
             
             display = data.map((value, index) => {
                 while(index < 3){ 
@@ -38,7 +38,7 @@
                     </div> 
                `
             }}).join('')
-            console.log(display)
+            // console.log(display)
             document.getElementById('blog-posts').innerHTML = display
 
 

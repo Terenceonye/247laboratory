@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Parse the response as JSON
             const responseData = await response.json();
             localStorage.setItem('ref', responseData.ref)
-            displayAlert('success', 'Confirm YOur details! Redirecting...');
-            window.location.href = './successbooking.html'; // Redirect to success booking page
+            displayAlert('success', 'Confirm Your details! Redirecting...');
+             // Redirect to success booking page
 
             console.log('Form submitted successfully:', responseData);
             // Handle success, e.g., redirect the user or display a success message

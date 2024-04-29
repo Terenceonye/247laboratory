@@ -233,78 +233,7 @@
                 </div>
                 <div class="owl-carousel testimonial-slider">
                     <!-- Add more slider-card items here -->
-                    <div class="testimonial-card text-center">
-                        <div class="img"><img src="assets/img/Group 92.png" alt=""></div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit.
-                                 Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?
-                            </p>
-                        </div>                        
-                        <div class="icons ratings">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="patient-name"><h4>Daniel Ogah</h4></div>
-                        <div class="patient"><p>Patient</p></div>
-                    </div>
-                    <div class="testimonial-card text-center">
-                        <div class="img"><img src="assets/img/Group 92.png" alt=""></div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit.
-                                 Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?
-                            </p>
-                        </div>                        
-                        <div class="icons ratings">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="patient-name"><h4>Daniel Ogah</h4></div>
-                        <div class="patient"><p>Patient</p></div>
-                    </div>
-                    <div class="testimonial-card text-center">
-                        <div class="img"><img src="assets/img/Group 92.png" alt=""></div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit.
-                                 Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?
-                            </p>
-                        </div>                        
-                        <div class="icons ratings">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="patient-name"><h4>Daniel Ogah</h4></div>
-                        <div class="patient"><p>Patient</p></div>
-                    </div>
-                    <div class="testimonial-card text-center">
-                        <div class="img"><img src="assets/img/Group 92.png" alt=""></div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit.
-                                 Quod corrupti laborum, quasi?Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum, quasi?
-                            </p>                        
-                        </div>                        
-                        <div class="icons ratings">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="patient-name"><h4>Daniel Ogah</h4></div>
-                        <div class="patient"><p>Patient</p></div>
-                    </div>
+                   <!-- Testimonials inserted by JS -->
                 </div>
             </div>
         </section>
@@ -415,7 +344,7 @@
 
    
 
-        <script>
+        <!-- <script>
             $('.testimonial-slider').owlCarousel({
             loop: true,
             margin: 10,
@@ -437,9 +366,90 @@
             }
         })
 
-        </script>
+        </script> -->
+
+<script>
+    // FETCH REVIEW DATA
+    document.addEventListener("DOMContentLoaded", function () {
+        const reviewSlider = $('.owl-carousel');
+        const get_url = 'https://blog.247pharmacy.net/users/getreviews';
+
+        async function getReview() {
+            try {
+                let res = await fetch(get_url);
+                if (!res.ok) throw new Error('Invalid response');
+                let data = await res.json();
+                console.log('data', data);
+                data.forEach(reviewData => {
+                    let sliderCard = document.createElement('div');
+                    sliderCard.classList.add('testimonial-card', 'text-center')
+                    let text = document.createElement('div')
+                    text.classList.add('text')
+                    text.innerHTML = reviewData.review;
+                    sliderCard.appendChild(text)
+
+                    // let userInfo = document.createElement('div');
+                    // userInfo.classList.add('d-flex', 'justify-content-between')
+
+                    let customerName = document.createElement('div')
+                    customerName.classList.add('patient-name')
+                    customerName.innerHTML = reviewData.username
+                    sliderCard.appendChild(customerName)
+
+                    let customerRating = document.createElement('div')
+                    customerRating.classList.add('ratings')
+                    let ratingHTML = '';
+                    for (let i = 0; i < 5; i++) {
+                        if (i < reviewData.stars) {
+                            ratingHTML += '<i class="fa-solid fa-star star-orange"></i>';
+                        } else {
+                            ratingHTML += '<i class="fa-solid fa-star"></i>';
+                        }
+                    }
+                    customerRating.innerHTML = ratingHTML;
+                    sliderCard.appendChild(customerRating)
+                    
+
+                    reviewSlider.trigger('add.owl.carousel', [sliderCard]).trigger('refresh.owl.carousel');
+                });
+            } catch (e) {
+                console.warn('Error', e.message)
+            }
+        }
+        getReview();
 
 
+        function init_carousel() {
+            $('.testimonial-slider').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                items: 2,
+                dots: true,
+                smartSpeed: 600,
+                center: false,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2,
+                        margin: 8,
+                    }
+                }
+            })
+        };
+
+        // Wait for the content to be loaded
+        $(document).ready(function () {
+            // Initialize the carousel
+            init_carousel();
+        });
+    });
+
+</script>
     
 
         <script src="./assets/js/blog.js"></script>
