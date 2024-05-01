@@ -94,17 +94,16 @@
                 
                 data = await response.json();
                 console.log(data)
-                if(data === '"error: Invalid  login codes, Please try again."'){
+                if(data.error){
                 displayAlert('danger', 'Invalid login Credentials...');
                 }else {
                 
                 displayAlert('success', `Login successful: Your ID is ${data.id}. Redirecting...`);
                 document.getElementById('signin-form').reset();
                 localStorage.setItem('key', data.id)
-                localStorage.setItem('location', data.statename)
                 setTimeout(()=> {
                     window.location.href = 'index.html'
-                }, 2000)
+                }, 1000)
 
 
                 token = localStorage.getItem('key')

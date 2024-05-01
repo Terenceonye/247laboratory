@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('ref', responseData.ref)
             displayAlert('success', 'Confirm Your details! Redirecting...');
              // Redirect to success booking page
+             setTimeout(()=> {
+                    window.location.href = 'payment.html'
+                }, 1000)
 
             console.log('Form submitted successfully:', responseData);
             // Handle success, e.g., redirect the user or display a success message
